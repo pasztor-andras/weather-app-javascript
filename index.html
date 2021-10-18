@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div id="header">
+        <!-- <div id="dropdownw">
+            <p onclick="showCities()" id="selectw">Cities</p>
+            <ul>
+                <li><a href="#">Budapest</a></li>
+                <li><a href="#">Berlin</a></li>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Prague</a></li>
+            </ul>
+        </div> -->
+        <div id="dropdown">
+            <label for="cities">Cities</label>
+            <select name="cities" id="cities">
+                <option value="Budapest">Budapest</option>
+                <option value="Berlin">Berlin</option>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+                <option value="Prague">Prague</option>
+            </select>
+        </div>
+        <div id="search">
+            <input type="text" placeholder="City">
+        </div>
+    </div>
+    <div class="main">
+        <div id="city">city</div>
+        <div id="tempature">t</div>
+        <div id="skyCondition">
+            <img src="" alt="" id="skyImg">
+        </div>
+        <div id="humidity">h</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
