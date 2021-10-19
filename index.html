@@ -9,18 +9,8 @@
 </head>
 <body>
     <div id="header">
-        <!-- <div id="dropdownw">
-            <p onclick="showCities()" id="selectw">Cities</p>
-            <ul>
-                <li><a href="#">Budapest</a></li>
-                <li><a href="#">Berlin</a></li>
-                <li><a href="#">London</a></li>
-                <li><a href="#">Paris</a></li>
-                <li><a href="#">Prague</a></li>
-            </ul>
-        </div> -->
         <div id="dropdown">
-            <label for="cities">Cities</label>
+            <label for="cities">Cities: </label>
             <select name="cities" id="cities">
                 <option value="Berlin">Berlin</option>
                 <option value="Budapest">Budapest</option>
@@ -28,18 +18,32 @@
                 <option value="Paris">Paris</option>
                 <option value="Prague">Prague</option>
             </select>
+            <button onclick="loadData()" class="btn">Select this city</button>
         </div>
-        <div id="search">
+        <!-- <div id="search">
             <input type="text" placeholder="City">
-        </div>
+        </div> -->
     </div>
-    <div class="main">
-        <div id="city"></div>
-        <div id="tempature">t</div>
-        <div id="skyCondition">
-            <img src="" alt="" id="skyImg">
+    <div hidden id="spinner"></div>
+    <div id="main">
+        <div id="gridCity" class="a">
+            <p id="city"></p>
+            <p id="country"></p>
         </div>
-        <div id="humidity">h</div>
+        <div id="skyCondition" class="b">
+            <img src="" alt="" id="skyImg" width="100px" height="100px">
+            <p id="skyCond"></p>
+        </div>
+        <div id="datas1" class="c">
+            <p id="tempature"></p>
+            <p id="feelslike"></p>
+        </div>
+        <div id="datas2" class="d">
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="cloud"></p>
+            <p id="pressure"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
