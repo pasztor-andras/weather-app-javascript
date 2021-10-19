@@ -57,7 +57,6 @@ button.addEventListener('click', ()=>{
         skyImg.setAttribute('src',parsedData.current.condition.icon)
         skyImg.style.width='100px'
         skyImg.style.height='100px'
-        skyImg.setAttribute('src',parsedData.current.condition.icon)
         humidity.innerHTML = 'Humidity: ' + parsedData.current.humidity
         wind.innerHTML = 'Wind: ' + parsedData.current.wind_kph + ' Km/h'
         cloud.innerHTML = 'Cloud: ' + parsedData.current.cloud + ' %'
