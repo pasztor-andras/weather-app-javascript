@@ -51,10 +51,10 @@ li{
 #city{
     place-self: center;
     grid-column: 1/4;
-    / align-self: center; /
+    /* align-self: center; */
 
 }
 #tempature, #skyCondition, #humidity{
     place-self: center;
-    / align-self: center; */
+    /* align-self: center; */
 }
