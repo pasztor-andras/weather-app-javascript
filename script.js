@@ -13,18 +13,15 @@ function changeCity(){
 }
 changeCity()
 
-const spinner = document.getElementById("spinner")
+const spinner = document.getElementById("loading")
 const main = document.getElementById('main')
 function loadData() {
     spinner.removeAttribute('hidden')
     main.setAttribute('hidden', '')
-    fetch('https://www.mocky.io/v2/5185415ba171ea3a00704eed?mocky-delay=1000ms')
-    .then(response => response.json())
-    .then(data => {
-      spinner.setAttribute('hidden', '')
-      main.removeAttribute('hidden')
-      console.log(data)
-    });
+    setTimeout(function(){
+        spinner.setAttribute('hidden', '')
+        main.removeAttribute('hidden')
+    },3000)
 }
 
 const button = document.querySelector('button')
