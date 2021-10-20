@@ -62,7 +62,6 @@ button.addEventListener('click', ()=>{
         const feelslike = document.getElementById('feelslike')
         const pressure = document.getElementById('pressure')
     
-        // city.innerHTML = parsedData.location.name +'<br>'+ parsedData.location.country
         city.innerHTML = parsedData.location.name
         country.innerHTML = parsedData.location.country
         tempature.innerHTML = 'Tempature: ' + parsedData.current.temp_c + ' °C'
@@ -114,26 +113,3 @@ draggable.addEventListener('mouseup', function() {
   isMouseDown = false;
   document.body.classList.remove('no-select');
 })
-
-// async function searchData(){
-//     let url2 = "http://api.weatherapi.com/v1/search.json?key=54f66a90fbd841afa23121456211810&q="
-
-//     let response2 = await fetch(url2)
-//     let parsedData2 = await response2.json()
-//     console.log(parsedData2)
-    
-//     const city2 = document.getElementById('city')
-//     const tempature2 = document.getElementById('tempature')
-//     const sky2 = document.getElementById('skyCondition')
-//     const humidity2 = document.getElementById('humidity')
-//     const skyImg2 = document.getElementById('skyImg')
-
-//     city2.innerHTML = parsedData2.name
-//     // tempature2.innerHTML = parsedData2.current.temp_c + ' °C'
-//     // let pElem = document.createElement('p')
-//     // pElem.innerHTML = parsedData2.current.condition.text
-//     // sky2.appendChild(pElem)
-//     // skyImg2.setAttribute('src',parsedData2.current.condition.icon)
-//     // humidity2.innerHTML = parsedData2.current.humidity
-// }
-// searchData()
