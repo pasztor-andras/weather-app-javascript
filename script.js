@@ -28,7 +28,23 @@ const button = document.querySelector('button')
 
 button.addEventListener('click', ()=>{
     async function getData(){
-        
+
+        const main = document.body
+        main.style.backgroundSize = "cover"
+        main.style.backgroundRepeat = "no-repeat"
+
+    if (citySelector.value == "Berlin") {
+        main.style.backgroundImage = "url(pictures/Berlin.jpg)"
+    } else if (citySelector.value == "Budapest") {
+        main.style.backgroundImage = "url(pictures/Bp.jpg)"
+    } else if (citySelector.value == "London") {
+        main.style.backgroundImage = "url(pictures/London.jpg)"
+    } else if (citySelector.value == "Paris") {
+        main.style.backgroundImage = "url(pictures/Paris.jpg)"
+    } else if (citySelector.value == "Prague") {
+        main.style.backgroundImage = "url(pictures/Prague.jpg)"
+    }
+
         let url = "http://api.weatherapi.com/v1/current.json?key=54f66a90fbd841afa23121456211810&q=" + selectedCity + "&aqi=no%22"
         
         let response = await fetch(url)
@@ -63,6 +79,41 @@ button.addEventListener('click', ()=>{
     getData()
 })
 
+
+var isMouseDown,initX,initY,height = draggable.offsetHeight,width = draggable.offsetWidth;
+
+draggable.addEventListener('mousedown', function(e) {
+  isMouseDown = true;
+  document.body.classList.add('no-select');
+  initX = e.offsetX;
+  initY = e.offsetY;
+})
+
+document.addEventListener('mousemove', function(e) {
+  if (isMouseDown) {
+    var cx = e.clientX - initX,
+        cy = e.clientY - initY;
+    if (cx < 0) {
+      cx = 0;
+    }
+    if (cy < 0) {
+      cy = 0;
+    }
+    if (window.innerWidth - e.clientX + initX < width) {
+      cx = window.innerWidth - width;
+    }
+    if (e.clientY > window.innerHeight - height+ initY) {
+      cy = window.innerHeight - height;
+    }
+    draggable.style.left = cx + 'px';
+    draggable.style.top = cy + 'px';
+  }
+})
+
+draggable.addEventListener('mouseup', function() {
+  isMouseDown = false;
+  document.body.classList.remove('no-select');
+})
 
 // async function searchData(){
 //     let url2 = "http://api.weatherapi.com/v1/search.json?key=54f66a90fbd841afa23121456211810&q="
