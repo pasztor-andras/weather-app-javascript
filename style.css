@@ -46,6 +46,7 @@ select{
 label{
     font-size: 18px;
     font-weight: bold;
+    color:white;
 }
 #search{
     display: inline-block;
