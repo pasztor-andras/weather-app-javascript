@@ -28,23 +28,6 @@ const button = document.querySelector('button')
 
 button.addEventListener('click', ()=>{
     async function getData(){
-
-        const main = document.body
-        main.style.backgroundSize = "cover"
-        main.style.backgroundRepeat = "no-repeat"
-
-    if (citySelector.value == "Berlin") {
-        main.style.backgroundImage = "url(pictures/Berlin.jpg)"
-    } else if (citySelector.value == "Budapest") {
-        main.style.backgroundImage = "url(pictures/Bp.jpg)"
-    } else if (citySelector.value == "London") {
-        main.style.backgroundImage = "url(pictures/London.jpg)"
-    } else if (citySelector.value == "Paris") {
-        main.style.backgroundImage = "url(pictures/Paris.jpg)"
-    } else if (citySelector.value == "Prague") {
-        main.style.backgroundImage = "url(pictures/Prague.jpg)"
-    }
-
         let url = "http://api.weatherapi.com/v1/current.json?key=54f66a90fbd841afa23121456211810&q=" + selectedCity + "&aqi=no%22"
         
         let response = await fetch(url)
@@ -74,6 +57,23 @@ button.addEventListener('click', ()=>{
         cloud.innerHTML = 'Cloud: ' + parsedData.current.cloud + ' %'
         feelslike.innerHTML = 'Feelslike: ' + parsedData.current.feelslike_c + ' °C'
         pressure.innerHTML = 'Pressure: ' + parsedData.current.pressure_mb + ' mb'
+
+        
+        const main = document.body
+        main.style.backgroundSize = "cover"
+        main.style.backgroundRepeat = "no-repeat"
+
+        if (citySelector.value == "Berlin") {
+            main.style.backgroundImage = "url(pictures/Berlin.jpg)"
+        } else if (citySelector.value == "Budapest") {
+            main.style.backgroundImage = "url(pictures/Bp.jpg)"
+        } else if (citySelector.value == "London") {
+            main.style.backgroundImage = "url(pictures/London.jpg)"
+        } else if (citySelector.value == "Paris") {
+            main.style.backgroundImage = "url(pictures/Paris.jpg)"
+        } else if (citySelector.value == "Prague") {
+            main.style.backgroundImage = "url(pictures/Prague.jpg)"
+        }
     }
     getData()
 })
