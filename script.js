@@ -28,7 +28,7 @@ const button = document.querySelector('button')
 
 button.addEventListener('click', ()=>{
     async function getData(){
-        let url = "http://api.weatherapi.com/v1/current.json?key=54f66a90fbd841afa23121456211810&q=" + selectedCity + "&aqi=no%22"
+        let url = "http://api.weatherapi.com/v1/current.json?key=96d3107260874a57b50102545221902&q=" + selectedCity + "&aqi=no%22"
         
         let response = await fetch(url)
         let parsedData = await response.json() //nyers adat
